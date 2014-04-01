@@ -1,0 +1,40 @@
+{
+  "type":"object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "$ref": "http://localhost/plugins/content/component/model.schema",
+  "definitions": {
+    "asset": {
+      "type": "object",
+      "properties": {
+        "alt": { "type": "string" },
+        "body": { "type": "string" },
+        "src": { "type": "string" },
+        "title": { "type": "string" }
+      },
+      "required": ["body"]
+    }
+  },
+  "properties":{
+    "_direction": {
+      "type":"string",
+      "enum": ["left", "right"],
+      "required":true
+    },
+    "control": {
+      "type":"object",
+      "properties":{
+        "hideText": {
+          "type":"string",
+          "required":true
+        },
+        "showText": {
+          "type":"string",
+          "required":true
+        }
+      }
+    },
+    "first": { "$ref": "#/definitions/asset" },
+    "second": { "$ref": "#/definitions/asset" }
+  }
+}
